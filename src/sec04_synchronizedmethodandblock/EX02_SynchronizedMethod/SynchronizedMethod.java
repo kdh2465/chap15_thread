@@ -1,5 +1,7 @@
 package sec04_synchronizedmethodandblock.EX02_SynchronizedMethod;
 
+/*동기화 메서드를 활용한 동기화 구현*/
+
 //# 공유객체
 class MyData {
 	int data = 3;
@@ -43,3 +45,4 @@ public class SynchronizedMethod {
 		plusThread2.start();
 	}
 }
+
