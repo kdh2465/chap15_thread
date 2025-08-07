@@ -1,5 +1,7 @@
 package sec05_threadstates.EX02_YieldInRunnableState;
 
+/*RUNNABLE 상태에서 yield() 메서드를 이용한 CPU 사용 양보*/
+
 class MyThread extends Thread {
 	boolean yieldFlag;
 	@Override
@@ -40,3 +42,4 @@ public class YieldInRunnableState {
 	
 
 }
+
