@@ -1,10 +1,11 @@
 package sec05_threadstates.EX04_TimedWaiting_Join;
 
+/*join() 메서드를 이용한 TIMED_WAITING과 interrupt()*/
 
 class MyThread1 extends Thread {
 	@Override
 	public void run() {
-		for(long i=0; i<1000000000L ; i++) {} //시간지연
+		for(long i=0, sum=0; i<1_000_000_000L ; i++) {sum+=i;} //시간지연
 	}
 }
 
@@ -20,7 +21,7 @@ class MyThread2 extends Thread {
 			myThread1.join(3000);
 		} catch (InterruptedException e) {
 			System.out.println(" -- join(...) 진행중 interrupt() 발생");
-			for(long i=0; i<1000000000L ; i++) {} //시간지연
+			for(long i=0, sum=0; i<1_000_000_000L ; i++) {sum+=i;} //시간지연
 		}
 	}
 }
@@ -45,3 +46,4 @@ public class TimedWaiting_Join {
 				
 	}
 }
+
