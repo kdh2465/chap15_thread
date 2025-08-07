@@ -1,35 +1,34 @@
 package sec05_threadstates.EX01_NewRunnableTerminated;
 
-/*쓰레드 상태(NEW, RUNNABLE, TERMINATED)*/
+/*Thread.sleep() 메서드를 이용한 TIMED_WAITING과 interrupt()*/
 
-public class New_Runnable_Terminated {
-	public static void main(String[] args) {
-		//#쓰레드 상태 저장 클래스 
-		Thread.State state;
-		
-		//#1. 객체 생성 (NEW)
-		Thread myThread = new Thread() {
-			@Override
-			public void run() {
-				for(long i=0; i<1000000000L ; i++) {} //시간지연
-			}
-		};		
-		state = myThread.getState(); 
-		System.out.println("myThread state = "+ state); //NEW
-		
-		//#2. myThread 시작
-		myThread.start();
-		state = myThread.getState();
-		System.out.println("myThread state = "+ state); //Runnable
-				
-		//#3. myThread 종료
+class MyThread extends Thread {
+	@Override
+	public void run() {
 		try {
-			myThread.join();
-		} catch (InterruptedException e) {	}
-		
-		state = myThread.getState();
-		System.out.println("myThread state = "+ state); //TERMINATED		
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			System.out.println(" -- sleep() 진행중 interrupt() 발생");
+			for(long i=0, sum=0; i<1_000_000_000L ; i++) {sum+=i;} //시간지연
+		}
 	}
 }
+
+public class t {
+	public static void main(String[] args) {
+		
+		MyThread myThread = new MyThread();
+		myThread.start();
+		
+		try {Thread.sleep(10);} catch (InterruptedException e) {} //쓰레드 시작 준비시간
+		System.out.println("MyThread State = " + myThread.getState()); //TIMED_WAITING
+		
+		myThread.interrupt();
+		try {Thread.sleep(10);} catch (InterruptedException e) {} //인터럽트 준비시간
+		System.out.println("MyThread State = " + myThread.getState()); //RUNNABLE
+	}
+}
+
+
 
 
