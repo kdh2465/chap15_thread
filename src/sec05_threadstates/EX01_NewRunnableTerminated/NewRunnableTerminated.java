@@ -2,7 +2,7 @@ package sec05_threadstates.EX01_NewRunnableTerminated;
 
 /*쓰레드 상태(NEW, RUNNABLE, TERMINATED)*/
 
-public class NewRunnableTerminated {
+public class New_Runnable_Terminated {
 	public static void main(String[] args) {
 		//#쓰레드 상태 저장 클래스 
 		Thread.State state;
@@ -31,4 +31,5 @@ public class NewRunnableTerminated {
 		System.out.println("myThread state = "+ state); //TERMINATED		
 	}
 }
+
 
