@@ -1,5 +1,7 @@
 package sec04_synchronizedmethodandblock.EX04_KeyObject_1;
 
+/*3개의 동기화 영역이 동일한 열쇠로 동기화됐을 때*/
+
 class MyData {
 	synchronized void abc() {
 		for(int i=0; i<3; i++) {
@@ -50,6 +52,7 @@ public class KeyObject_1 {
 		}.start();
 	}
 }
+
 
 
 
