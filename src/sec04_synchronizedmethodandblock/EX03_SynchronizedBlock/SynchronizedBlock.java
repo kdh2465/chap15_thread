@@ -1,5 +1,7 @@
 package sec04_synchronizedmethodandblock.EX03_SynchronizedBlock;
 
+/*동기화 블록을 활용한 동기화 구현*/
+
 //# 공유객체
 class MyData {
 	int data = 3;
@@ -46,3 +48,4 @@ public class SynchronizedBlock {
 		plusThread2.start();
 	}
 }
+
