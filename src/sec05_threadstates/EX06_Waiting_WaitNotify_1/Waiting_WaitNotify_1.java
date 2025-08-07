@@ -1,5 +1,7 @@
 package sec05_threadstates.EX06_Waiting_WaitNotify_1;
 
+/*동기화만을 사용했을 때 임의적인 두 쓰레드의 실행 순서*/
+
 class DataBox {
 	int data;
 	synchronized void inputData(int data) {
@@ -35,3 +37,4 @@ public class Waiting_WaitNotify_1 {
 	}
 
 }
+
