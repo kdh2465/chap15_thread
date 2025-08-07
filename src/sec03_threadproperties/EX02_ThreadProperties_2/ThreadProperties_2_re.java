@@ -1,3 +1,5 @@
+package sec03_threadproperties.EX02_ThreadProperties_2;
+
 //우선순위
 class MyThread extends Thread {
 	@Override
@@ -40,4 +42,5 @@ public class ThreadProperties_2_re {
 		thread_highPriority.start();
 		
 	}
+
 }
