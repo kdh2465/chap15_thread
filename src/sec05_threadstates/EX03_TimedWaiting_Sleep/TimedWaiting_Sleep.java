@@ -9,7 +9,7 @@ class MyThread extends Thread {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			System.out.println(" -- sleep() 진행중 interrupt() 발생");
-			for(long i=0; i<1000000000L ; i++) {} //시간지연
+			for(long i=0; i<1_000_000_000L ; i++) {} //시간지연
 		}
 	}
 }
@@ -28,4 +28,5 @@ public class TimedWaiting_Sleep {
 		System.out.println("MyThread State = " + myThread.getState()); //RUNNABLE
 	}
 }
+
 
