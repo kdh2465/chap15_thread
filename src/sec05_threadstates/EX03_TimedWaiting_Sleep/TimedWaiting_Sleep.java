@@ -1,5 +1,7 @@
 package sec05_threadstates.EX03_TimedWaiting_Sleep;
 
+/*Thread.sleep() 메서드를 이용한 TIMED_WAITING과 interrupt()*/
+
 class MyThread extends Thread {
 	@Override
 	public void run() {
@@ -26,3 +28,4 @@ public class TimedWaiting_Sleep {
 		System.out.println("MyThread State = " + myThread.getState()); //RUNNABLE
 	}
 }
+
