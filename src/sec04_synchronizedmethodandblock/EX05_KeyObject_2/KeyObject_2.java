@@ -1,5 +1,7 @@
 package sec04_synchronizedmethodandblock.EX05_KeyObject_2;
 
+/*동기화 메서드와 동기화 블록이 다른 열쇠를 사용할 때*/
+
 class MyData {
 	synchronized void abc() {
 		for(int i=0; i<3; i++) {
@@ -50,6 +52,7 @@ public class KeyObject_2 {
 		}.start();
 	}
 }
+
 
 
 
