@@ -1,5 +1,7 @@
 package sec05_threadstates.EX05_BlockedState;
 
+/*공유 객체 동기화로 인한 BLOCKED 상태*/
+
 class MyBlockTest {
 	//#1. 공유객체
 	MyClass mc = new MyClass();
@@ -34,7 +36,7 @@ class MyBlockTest {
 			System.out.println("thread1->" +t1.getState());
 			System.out.println("thread2->" +t2.getState());
 			System.out.println("thread3->" +t3.getState());			
-			for(long i=0; i<1000000000L ; i++) {} //시간지연
+			for(long i=0, sum=0; i<1_000_000_000L ; i++) {sum+=i;} //시간지연
 		}
 	}	
 }
@@ -45,3 +47,4 @@ public class BlockedState {
 		mbt.startAll();				
 	}
 }
+
